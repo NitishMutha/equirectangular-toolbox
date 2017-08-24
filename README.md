@@ -7,3 +7,11 @@
 - Highly optimized imlementation to compute every pixel projection mapping at once, with bilinear interpolation for smoother image.
 - References: [mathworld.wolfram.com](http://mathworld.wolfram.com/GnomonicProjection.html), [wikipedia](https://en.wikipedia.org/wiki/Gnomonic_projection)
 
+#### DEMO  
+Input equirectangular image:
+![360.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/360.jpg "Equirectangular image")
+^ image taken from internet
+
+Normal Field of View output image of center point:  
+![nfov.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/sample_nfov.jpg "Equirectangular image")
+
