@@ -12,6 +12,8 @@
 ![360.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/360.jpg "Equirectangular image")
 ^ image taken from internet
 
-##### Normal Field of View output image of center point:  
-![nfov.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/sample_nfov.jpg "Equirectangular image")
+##### Normal Field of View output images:  
+![nfov.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/sample_nfov.jpg "Equirectangular image")  
+
+![nfov.jpg](https://github.com/NitishMutha/equirectangular-toolbox/blob/master/images/sample_nfov2.jpg "Equirectangular image")
 
