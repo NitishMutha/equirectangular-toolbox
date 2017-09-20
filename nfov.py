@@ -55,22 +55,13 @@ class NFOV():
         return np.array([lon, lat]).T
 
     def _bilinear_interpolation(self, screen_coord):
-        uf = screen_coord.T[0] * self.frame_width  # long - width
-        vf = screen_coord.T[1] * self.frame_height  # lat - height
+        uf = np.mod(screen_coord.T[0],1) * self.frame_width  # long - width
+        vf = np.mod(screen_coord.T[1],1) * self.frame_height  # lat - height
 
-        u0 = np.floor(uf).astype(int)  # coord of pixel to bottom left
-        v0 = np.floor(vf).astype(int)
-        u2 = np.add(u0, np.ones(uf.shape).astype(int))  # coords of pixel to top right
-        v2 = np.add(v0, np.ones(vf.shape).astype(int))
-
-        mu = np.subtract(uf, u0)  # fraction of way across pixel
-        mv = np.subtract(vf, v0)
-
-        # Pixel values of four corners
-        x0 = np.mod(u0, self.frame_width)
-        x2 = np.mod(u2, self.frame_width)
-        y0 = np.mod(v0, self.frame_height)
-        y2 = np.mod(v2, self.frame_height)
+        x0 = np.floor(uf).astype(int)  # coord of pixel to bottom left
+        y0 = np.floor(vf).astype(int)
+        x2 = np.add(x0, np.ones(uf.shape).astype(int))  # coords of pixel to top right
+        y2 = np.add(y0, np.ones(vf.shape).astype(int))
 
         base_y0 = np.multiply(y0, self.frame_width)
         base_y2 = np.multiply(y2, self.frame_width)
@@ -119,5 +110,5 @@ class NFOV():
 if __name__ == '__main__':
     img = im.imread('images/360.jpg')
     nfov = NFOV()
-    center_point = np.array([.5, .5])
+    center_point = np.array([0.5, .5])  # camera center point (valid range [0,1])
     nfov.toNFOV(img, center_point)
