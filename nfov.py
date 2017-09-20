@@ -14,7 +14,6 @@
 
 from math import pi
 import numpy as np
-import imageio as im
 
 class NFOV():
     def __init__(self, height=400, width=800):
@@ -108,6 +107,7 @@ class NFOV():
 
 # test the class
 if __name__ == '__main__':
+    import imageio as im
     img = im.imread('images/360.jpg')
     nfov = NFOV()
     center_point = np.array([0.5, .5])  # camera center point (valid range [0,1])
